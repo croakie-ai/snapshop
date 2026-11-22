@@ -26,7 +26,7 @@ Deep Learning PBL (CSAI3027P), UPES. Individual project.
 | Majority class | 40.7% | – | 21.2% | – |
 | MLP (32×32 RGB, standardized) | 83.4% | 0.730 | 71.6% | 0.599 |
 | ResNet-50 frozen + linear head | 89.3% | 0.835 | 70.6% | 0.575 |
-| ResNet-50 fine-tuned (2 heads) | – | – | – | – |
+| **ResNet-50 fine-tuned (2 heads)** | **93.7%** | **0.901** | **82.0%** | **0.741** |
 
 9 product groups, 16 colours. Test set untouched until final evaluation.
 

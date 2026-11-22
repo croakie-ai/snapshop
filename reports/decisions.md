@@ -114,7 +114,8 @@ Format: Decision · Options considered · Evidence · Reason · Impact
 - **Method:** loss = group CE + colour CE; AdamW, LR 1e-4 for the backbone (gentle, avoids catastrophic forgetting) and 1e-3 for the new heads; mixed precision (fp16); batch 64; max 10 epochs, early stopping (patience 3) on val loss
 - **Augmentation:** RandomCrop 224 from 256 + horizontal flip only. NO colour jitter, because colour is a label
 - **Reason:** half the training time and one forward pass at demo time; shared features can help both tasks
-- **Impact:** src/train_finetune.py → runs/finetuned_resnet50.pt + runs/finetune_history.json (results to be added)
+- **Evidence (val, best = epoch 4 of 7):** group 93.7% / macro-F1 0.901; colour 82.0% / 0.741 (vs frozen 89.3% / 0.835 and 70.6% / 0.575). After epoch 4 train loss kept falling (0.55 → 0.32) while val loss rose (0.79 → 0.94): overfitting; early stopping ended the run at epoch 7 and kept epoch 4
+- **Impact:** src/train_finetune.py → runs/finetuned_resnet50.pt (epoch 4) + runs/finetune_history.json; fine-tuning gave the biggest gain on colour (+11.4 points over frozen)
 
 ## D20. Validation DataLoader: 2 workers, not persistent
 - **Evidence:** run 1 crashed at the first validation with Windows error 1455 (out of memory): 4 persistent train workers + 4 val workers + a leftover notebook kernel on 16 GB RAM
