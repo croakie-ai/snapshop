@@ -1,0 +1,18 @@
+# Data: too big, and H&M / DeepFashion2 licences don't allow re-uploading
+data/
+
+# Model weights: kept locally / shared via GitHub Releases or Drive
+runs/*.pt
+*.pt
+*.pth
+
+# Python / Jupyter clutter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
