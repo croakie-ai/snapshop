@@ -121,3 +121,27 @@ Format: Decision · Options considered · Evidence · Reason · Impact
 - **Evidence:** run 1 crashed at the first validation with Windows error 1455 (out of memory): 4 persistent train workers + 4 val workers + a leftover notebook kernel on 16 GB RAM
 - **Reason:** each worker is a separate Python process holding its own copy of PyTorch
 - **Impact:** loading speed only; the same images, order and transforms, so results are unchanged
+
+## D21. Label smoothing (0.1) for the classifier: run B is the current best
+- **Why tried:** the error gallery showed the most confident mistakes are mostly wrong H&M labels (e.g. light blue jeans labelled Black); hard 100% targets make the model memorise that noise
+- **Method:** same as D19, only change: CrossEntropy(label_smoothing=0.1) for training; plain CrossEntropy for val so runs compare fairly; train workers 4 -> 2 (RAM, error 1455)
+- **Evidence (val):** run B best = epoch 6: group 94.1% / macro-F1 0.910, colour 82.3% / 0.752 (run A: 93.7% / 0.901, 82.0% / 0.741). Overfitting started 2 epochs later than run A (best epoch 4 -> 6)
+- **Note:** val loss is not comparable between A and B (smoothing lowers confidence on correct answers too); compared on accuracy + macro-F1
+- **Impact:** runs/finetuned_resnet50_ls.pt used by predict.py; final classifier is locked only after the weighted-loss run, then the test set is used once
+
+## D22. Detector: YOLO11s-seg on a 30k DeepFashion2 subset
+- **Options:** Faster/Mask R-CNN; YOLO-seg (boxes + masks in one fast model)
+- **Data:** 30,000 random DF2 train images; 2,000 random DF2 validation images for epoch selection; the other ~30k DF2 validation images kept untouched for final evaluation (ids saved: train_ids.txt, val_ids.txt; seed 42). Converted by src/data/make_yolo_df2.py (multi-part outlines joined with ultralytics' merge_multi_segment)
+- **Training:** COCO-pretrained yolo11s-seg, imgsz 640, batch 8, workers 2, planned 25 epochs (patience 6); resumed once after a laptop restart; stopped by choice after epoch 23 (gain per epoch had fallen to ~0.002-0.004 mAP)
+- **Evidence (2k val, epoch 23):** box mAP50 0.786 / mAP50-95 0.696; mask mAP50 0.616 / mAP50-95 0.407. For reference, the DeepFashion2 paper's Mask R-CNN (391k images, full val): box AP 0.667, mask AP 0.680
+- **Finding:** boxes are at benchmark level; masks lag. Suspects: the polygon-merging step in our converter, YOLO's lower mask resolution, less data. To check in the Phase 5 evaluation; the crop ablation (full vs box vs mask) decides whether masks matter for search
+- **Impact:** runs/segment/runs/yolo/df2_y11s/weights/best.pt
+
+## D23. Visual search: hybrid of ImageNet and fine-tuned fingerprints (alpha = 0.5)
+- **Method:** every product (104,014) -> 2,048-d backbone features, L2-normalised (src/extract_embeddings.py); exact cosine search with FAISS IndexFlatIP over the whole catalogue
+- **Test:** 11,437 val queries that have a sibling (same product_code, other colour); Recall@K = a sibling in the top K; plus group / colour match in the top 10; plus galleries of 5 fixed queries (seed 42)
+- **Evidence:** Recall@10 / colour match@10: ImageNet 0.360 / 0.461; fine-tuned A 0.181 / 0.764; fine-tuned B 0.159 / 0.782. Fine-tuning for tags organised the features by colour and type and lost fine design detail (label smoothing slightly more so)
+- **Key insight:** sibling recall and colour match pull in opposite directions by definition (a sibling is always another colour), so no single metric decides
+- **Hybrid:** score = alpha * cos(ImageNet) + (1 - alpha) * cos(fine-tuned B), done by concatenating sqrt-weighted fingerprints. alpha 0 / 0.25 / 0.5 / 0.75 / 1 -> Recall@10 0.159 / 0.185 / 0.215 / 0.261 / 0.360, colour match 0.782 / 0.775 / 0.759 / 0.718 / 0.461
+- **Choice:** alpha = 0.5: keeps colour (0.759) and type (0.927) match near the maximum while design recall rises 35%; galleries look right on all 5 queries (same type, same colour, siblings near the top). Re-checked after metric learning
+- **Impact:** notebooks/07_search.ipynb; figures search_*.png
