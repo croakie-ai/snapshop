@@ -1,5 +1,6 @@
 # Data: too big, and H&M / DeepFashion2 licences don't allow re-uploading
-data/
+# (leading / = only the top-level data/ folder, NOT src/data/ which holds code)
+/data/
 
 # Model weights: kept locally / shared via GitHub Releases or Drive
 runs/*.pt
