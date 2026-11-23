@@ -181,3 +181,18 @@ Format: Decision · Options considered · Evidence · Reason · Impact
 - **Evidence:** `src/evaluate_test.py` → `runs/test_results.json`. Tags 93.9% / 82.8% (val 94.1 / 82.3). ArcFace Recall@10 0.801 (val 0.799); hybrid 0.485 (val 0.491). MAP@12 LSTM 0.0200 vs co-purchase 0.0106 vs popularity 0.0087 (test week 16–22 Sep). YOLO box mAP50 0.779 on 5,000 unseen DF2 photos
 - **Reason:** validation numbers were used to choose models and settings, so they are slightly optimistic; the test set gives the honest final estimate
 - **Impact:** test numbers match validation closely → the models generalise. No model or setting was changed after seeing them
+
+## D29. Deployment format: ONNX, with INT8 quantization of the convolutions only
+- **Options:** keep PyTorch only; ONNX fp32; ONNX INT8 (dynamic vs static quantization; all ops vs convolutions only)
+- **Evidence (`src/export_onnx.py` → `runs/onnx_report.json`, 1,000 val images):** ONNX fp32 matches PyTorch to 1e-5, same tags on 100% of images. INT8 v1 (all op types, min/max calibration on 200 train images): 4x smaller but group 94.7 → 86.5%, colour 82.6 → 71.7%, colour-fingerprint cosine to fp32 only 0.58 (`runs/onnx_report_v1.json`). INT8 v2 (convolutions only, per-channel weights, 99.999th-percentile calibration on 100 train images): 24.5 / 28.5 MB, group 94.3%, colour 81.8%, fingerprint cosine 0.96 / 0.97
+- **Speed (`src/benchmark.py`, CPU, batch 1, tagger + designer):** PyTorch 78.5 ms p50 · ONNX fp32 64.1 ms · INT8 v2 61.4 ms (v1, with every op quantized, was 42.6 ms but inaccurate). The INT8 gain on this CPU is mostly size, not speed. The GPU timings were taken with the laptop GPU in a low-power state (64 ms, same as the CPU), so they are not compared
+- **Reason:** static quantization (calibrated ranges) is the right kind for CNNs; dynamic quantization targets Linear/MatMul-heavy models. Quantizing the residual adds, pooling and L2-normalisation destroyed the fingerprints; keeping them in fp32 costs < 1 point
+- **Impact:** a 4x smaller, PyTorch-free deployment option. Percentile calibration keeps every activation of every calibration image in RAM (200 images crashed the 16 GB laptop), so it uses 100
+
+## D30. Serving and engineering: FastAPI + Docker + tests with fake models + CI/CD
+- **Options:** keep the dashboard only; Flask; FastAPI; TorchServe/Triton
+- **Choice:** FastAPI (type hints → validation and automatic OpenAPI docs; ASGI). Plain `def` endpoint (model inference blocks, so FastAPI runs it in its thread pool) plus a lock so requests take turns on the GPU; models and the 1 GB index load once at startup
+- **Docker:** CPU image, non-root, health check; weights/embeddings/photos mounted read-only (the image holds code and libraries only); torchvision's ImageNet weights downloaded at build time so the container starts offline
+- **Tests:** 36 pytest tests that need no data, weights or GPU (fake YOLO, fake 300-product catalogue, random fingerprints), so CI can run them. They caught a real bug: Ultralytics patches `PIL.Image.open`, so a non-image upload raised a different exception and returned 500 instead of 400
+- **CI/CD (GitHub Actions):** every push → tests on a fresh Ubuntu machine; on main → build the Docker image and publish it to ghcr.io
+- **Honest gaps:** no authentication, rate limiting or monitoring (a local demo does not need them; they are the next step for a public service)

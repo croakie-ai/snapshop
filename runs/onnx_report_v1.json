@@ -1,0 +1,25 @@
+{
+  "pytorch_vs_onnx_max_diff": {
+    "group_logits": 7.3909759521484375e-06,
+    "colour_logits": 1.1920928955078125e-05,
+    "colour_fp": 1.9222497940063477e-06,
+    "design_fp": 6.258487701416016e-07
+  },
+  "size_mb": {
+    "tagger.onnx": 94.4,
+    "tagger_int8.onnx": 24.2,
+    "designer.onnx": 98.4,
+    "designer_int8.onnx": 25.2
+  },
+  "fp32_vs_int8": {
+    "n_val_images": 1000,
+    "fp32_group_acc": 0.947,
+    "fp32_colour_acc": 0.826,
+    "int8_group_acc": 0.865,
+    "int8_colour_acc": 0.717,
+    "colour_fp_cosine_fp32_vs_int8_mean": 0.5840426087379456,
+    "colour_fp_cosine_fp32_vs_int8_min": 0.2567296624183655,
+    "design_fp_cosine_fp32_vs_int8_mean": 0.8867651224136353,
+    "design_fp_cosine_fp32_vs_int8_min": 0.4700588583946228
+  }
+}

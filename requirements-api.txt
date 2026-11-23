@@ -1,0 +1,14 @@
+# What the API (src/api.py) and the tests need. Install PyTorch first, CPU build:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+numpy
+polars
+pyarrow
+pillow
+matplotlib
+scikit-learn
+tqdm
+faiss-cpu
+ultralytics
+fastapi
+uvicorn
+python-multipart

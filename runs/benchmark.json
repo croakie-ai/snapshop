@@ -1,0 +1,30 @@
+{
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+  },
+  "models_per_crop": {
+    "PyTorch GPU (fp32)": {
+      "p50_ms": 64.0,
+      "p95_ms": 64.1
+    },
+    "PyTorch CPU (fp32)": {
+      "p50_ms": 78.5,
+      "p95_ms": 95.5
+    },
+    "ONNX Runtime CPU (fp32)": {
+      "p50_ms": 64.1,
+      "p95_ms": 84.0
+    },
+    "ONNX Runtime CPU (INT8)": {
+      "p50_ms": 61.4,
+      "p95_ms": 86.9
+    }
+  },
+  "full_pipeline_per_photo": {
+    "device": "cuda",
+    "n_photos": 8,
+    "p50_ms": 219.1,
+    "p95_ms": 351.7
+  }
+}

@@ -1,5 +1,7 @@
 # SnapShop: Street-to-Shop Visual Search & Recommendation
 
+[![CI](https://github.com/croakie-ai/snapshop/actions/workflows/ci.yml/badge.svg)](https://github.com/croakie-ai/snapshop/actions/workflows/ci.yml)
+
 **Any clothing photo in → every garment found → its tags, the 10 most similar products from a 104K-item H&M catalogue, and what to buy next.**
 
 <!-- DEMO GIF (step 2): ![SnapShop demo](reports/figures/demo.gif) -->
@@ -46,7 +48,32 @@ Every model and setting was chosen on the validation set; the test set was touch
 - **Metric learning when fine-tuning failed.** Fine-tuning for tags made embeddings cluster by colour and *hurt* design search (Recall@10 0.36 → 0.18). ArcFace (s = 30, m = 0.3) raised it to 0.80.
 - **Ablations on real street photos.** Full photo vs YOLO box vs perfect box vs perfect mask, across 5 hybrid weights. Box crops matched mask crops, so the pipeline uses boxes.
 - **Error analysis.** Confusion matrices, most-confident-mistake galleries, a label audit that predicted the "Metal" jewellery shortcut before training (confirmed: 51% of non-metal jewellery predicted Metal).
-- **Every decision logged** with options, evidence and reason: [`reports/decisions.md`](reports/decisions.md) (28 decisions).
+- **Every decision logged** with options, evidence and reason: [`reports/decisions.md`](reports/decisions.md) (30 decisions).
+
+## Engineering: serving, speed, tests
+
+- **REST API** (`src/api.py`, FastAPI): `POST /predict` (photo → garments, tags, top-k similar, buy next as JSON), `GET /health`, `GET /products/{id}/image`, interactive docs at `/docs`. Models load once at startup; Pydantic validates every input and output (400 / 413 / 422 on bad requests).
+- **Docker** (`Dockerfile`): CPU image, non-root user, health check; weights and the catalogue are mounted as volumes, so one image serves any retrained model.
+- **ONNX + INT8** (`src/export_onnx.py`): both CNNs exported to ONNX (max difference to PyTorch 1e-5) and statically quantized to INT8: **4× smaller for < 1 point of accuracy**.
+- **Tests + CI/CD** (`tests/`, `.github/workflows/ci.yml`): 36 pytest tests (preprocessing, MAP@12, hybrid search maths, causal masking, every API status code) run with tiny fake models, so they need no data or GPU. Every push runs them on GitHub Actions; on `main` the Docker image is then built and published to GitHub Container Registry.
+
+| Model variant (tagger + designer, one garment, CPU, batch 1) | Size | p50 | p95 | Accuracy (1,000 val images) |
+|---|---|---|---|---|
+| PyTorch fp32 | 94 + 98 MB | 78.5 ms | 95.5 ms | group 94.7%, colour 82.6% |
+| ONNX Runtime fp32 | 94 + 98 MB | 64.1 ms | 84.0 ms | identical |
+| **ONNX Runtime INT8** | **24 + 28 MB** | 61.4 ms | 86.9 ms | group 94.3%, colour 81.8% |
+
+Full pipeline per photo on the laptop (RTX 3050, YOLO + up to 3 garments + search over 104K + buy next): **p50 219 ms, p95 352 ms** (`src/benchmark.py` → `runs/benchmark.json`).
+
+### Where the models look
+
+![Grad-CAM](reports/figures/gradcam.png)
+
+![t-SNE of fingerprints](reports/figures/tsne_designs.png)
+
+Same colour = the same design in different colourways. ImageNet features scatter them; ArcFace pulls each design together, which is why design search went from Recall@10 0.35 to 0.80.
+
+Model details, intended use and failure modes: [`reports/model_cards.md`](reports/model_cards.md).
 
 ## Run it
 
@@ -57,6 +84,14 @@ pip install -r requirements.txt
 
 python src/app.py                                   # dashboard at http://127.0.0.1:7860
 python src/predict.py photo.jpg --match balanced    # command line: tags + top-10 + buy next
+uvicorn api:app --app-dir src --port 8000           # REST API, docs at http://127.0.0.1:8000/docs
+pytest                                              # 36 tests, no data or GPU needed
+```
+
+Docker (API on CPU; mounts your local weights and catalogue):
+```bash
+docker build -t snapshop-api .
+docker run --rm -p 8000:8000 -v "$PWD/runs:/app/runs:ro" -v "$PWD/data/processed:/app/data/processed:ro" snapshop-api
 ```
 
 Weights (`runs/*.pt`) and data are not in the repo (size + licences); the pipeline below rebuilds them.
@@ -72,6 +107,7 @@ Weights (`runs/*.pt`) and data are not in the repo (size + licences); the pipeli
 | 5 Street photos | `src/data/make_yolo_df2.py`, `make_yolo_df2_test.py`, YOLO training (below), `src/eval_street2shop.py` | detector + street-to-shop ablation |
 | 6 Buy next | `src/data/make_sequences.py`, `notebooks/08_recommender.ipynb`, `src/train_recommender.py --model {lstm,transformer}` | baselines + LSTM / transformer |
 | 7 Integration | `src/predict.py`, `src/app.py`, `src/evaluate_test.py` | CLI, dashboard, final test numbers |
+| 8 Engineering | `src/export_onnx.py`, `src/benchmark.py`, `src/api.py`, `src/visualize.py`, `tests/`, `Dockerfile`, `.github/workflows/ci.yml` | ONNX/INT8, latency, REST API, Grad-CAM/t-SNE, tests, CI/CD |
 
 ```bash
 yolo segment train model=yolo11s-seg.pt data=data/processed/df2_yolo/df2.yaml epochs=25 patience=6 batch=8 imgsz=640 project=runs/yolo name=df2_y11s

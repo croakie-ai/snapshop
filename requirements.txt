@@ -15,3 +15,10 @@ kaggle
 faiss-cpu
 ultralytics
 gradio>=5,<6
+onnx
+onnxruntime
+fastapi
+uvicorn
+python-multipart
+httpx
+pytest

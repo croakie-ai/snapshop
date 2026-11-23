@@ -1,0 +1,15 @@
+# keep the build context small: only src/ and requirements-api.txt are needed
+data/
+runs/
+notebooks/
+reports/
+tests/
+configs/
+.git/
+.github/
+**/__pycache__/
+*.pt
+*.pth
+*.onnx
+*.ipynb
+.vscode/
