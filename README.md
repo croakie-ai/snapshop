@@ -71,7 +71,9 @@ Full pipeline per photo on the laptop (RTX 3050, YOLO + up to 3 garments + searc
 
 ![t-SNE of fingerprints](reports/figures/tsne_designs.png)
 
-Same colour = the same design in different colourways. ImageNet features scatter them; ArcFace pulls each design together, which is why design search went from Recall@10 0.35 to 0.80.
+Grad-CAM: the tagger looks at the garment itself (neckline and body for tops, the waist and legs for trousers, the sole for shoes), not the background.
+
+t-SNE: same colour = the same design in different colourways. With ImageNet features several designs mix and the biggest one splits into two groups; ArcFace gives tighter, separate clusters per design, which is why design search went from Recall@10 0.35 to 0.80.
 
 Model details, intended use and failure modes: [`reports/model_cards.md`](reports/model_cards.md).
 
