@@ -36,6 +36,8 @@ BATCH_SIZE = 64        # lower to 32 if you get "CUDA out of memory"
 LR_BACKBONE = 1e-4     # small: gently adapt the pretrained filters
 LR_HEADS = 1e-3        # bigger: the heads start from random
 SEED = 42
+LABEL_SMOOTHING = 0.1   # 0 = original run A; 0.1 = run B
+TAG = "_ls"             # added to output filenames so run A's files aren't overwritten
 
 
 class MultiHeadResNet(nn.Module):
@@ -82,7 +84,7 @@ def main() -> None:
     RUNS.mkdir(exist_ok=True)
 
     train_dl = DataLoader(ProductImages("train"), batch_size=BATCH_SIZE, shuffle=True,
-                          num_workers=4, pin_memory=True, persistent_workers=True)
+                          num_workers=2, pin_memory=True, persistent_workers=True)   # 2 (not 4): avoids Windows RAM error 1455
     val_dl = DataLoader(ProductImages("val"), batch_size=128, shuffle=False,
                         num_workers=2, pin_memory=True)   # 2 workers, not persistent: avoids Windows RAM error 1455
 
@@ -91,7 +93,8 @@ def main() -> None:
         {"params": model.backbone.parameters(), "lr": LR_BACKBONE},
         {"params": list(model.group_head.parameters()) + list(model.colour_head.parameters()), "lr": LR_HEADS},
     ], weight_decay=1e-4)
-    loss_fn = nn.CrossEntropyLoss()
+    loss_fn = nn.CrossEntropyLoss(label_smoothing=LABEL_SMOOTHING)   # training: "never be 100% sure"
+    eval_loss_fn = nn.CrossEntropyLoss()                              # val: plain loss, so runs A and B compare fairly
     scaler = torch.amp.GradScaler("cuda", enabled=(device == "cuda"))
 
     history, best_loss, bad = [], float("inf"), 0
@@ -110,19 +113,19 @@ def main() -> None:
             running += loss.item() * len(x)
             n += len(x)
 
-        val = evaluate(model, val_dl, loss_fn, device)
+        val = evaluate(model, val_dl, eval_loss_fn, device)
         record = {"epoch": epoch, "train_loss": running / n,
                   **{f"val_{k}": v for k, v in val.items()},
                   "minutes": round((time.time() - t0) / 60, 1)}
         history.append(record)
-        (RUNS / "finetune_history.json").write_text(json.dumps(history, indent=2))
+        (RUNS / f"finetune{TAG}_history.json").write_text(json.dumps(history, indent=2))
         print(f"epoch {epoch} | train loss {record['train_loss']:.3f} | val loss {val['loss']:.3f} | "
               f"group acc {val['group_acc']:.3f} F1 {val['group_f1']:.3f} | "
               f"colour acc {val['colour_acc']:.3f} F1 {val['colour_f1']:.3f} | {record['minutes']} min")
 
         if val["loss"] < best_loss:
             best_loss, bad = val["loss"], 0
-            torch.save(model.state_dict(), RUNS / "finetuned_resnet50.pt")
+            torch.save(model.state_dict(), RUNS / f"finetuned_resnet50{TAG}.pt")
             print("  new best val loss: weights saved")
         else:
             bad += 1
