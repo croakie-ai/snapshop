@@ -13,7 +13,6 @@
 | **Top-10 similar products** | ArcFace design embeddings + classifier colour/type embeddings, hybrid cosine search with FAISS over 104,014 products |
 | **Buy next** (12 items) | LSTM next-item model trained on 31M purchases; the photo's top match is the input |
 
-Built as an individual Deep Learning project (CSAI3027P, UPES), on a laptop with an RTX 3050 (6 GB).
 
 ![Architecture](reports/figures/snapshop_architecture_final.png)
 
