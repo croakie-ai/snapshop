@@ -16,3 +16,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# DeepFashion2 images may not be redistributed: keep YOLO's image outputs local
+runs/segment/**/*.jpg
+runs/segment/runs/yolo_predict/

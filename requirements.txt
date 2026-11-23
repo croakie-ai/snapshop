@@ -12,3 +12,6 @@ matplotlib
 tqdm
 jupyter
 kaggle
+faiss-cpu
+ultralytics
+gradio>=5,<6

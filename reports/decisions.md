@@ -154,3 +154,30 @@ Format: Decision · Options considered · Evidence · Reason · Impact
 - **Choice:** metric + ft_ls, alpha 0.5 (Recall@10 2.3x the D23 pick, best type match, colour mostly kept). Provisional: the colour-vs-design conflict exists only in the sibling test (siblings are always another colour); in real street-to-shop the target has the same design AND colour, so the final alpha is chosen on DeepFashion2 street-to-shop pairs (Phase 5)
 - **Product feature:** the user can pick the mix in the demo (--match design / balanced / colour = alpha 1 / 0.5 / 0.25); same fingerprints, only the weight changes
 - **Impact:** final search = 2 models (ft_ls also gives the tags, so only one extra ResNet pass); figures search_metric.png, search_hybrid_metric_*.png
+
+## D25. Detector in the pipeline: YOLO box crops; alpha 0.5 confirmed on street-to-shop; mask issue documented
+- **YOLO honest score (5,000 untouched DF2 validation images, src/data/make_yolo_df2_test.py):** box mAP50 0.779, mask mAP50 0.600 (2k epoch-picking set: 0.786 / 0.616, so not inflated). Per class box: trousers 0.963, short sleeve top 0.945, shorts 0.914, skirt 0.897 ... short sleeve outwear 0.369 (rare)
+- **Mask issue:** trousers and shorts have excellent boxes (0.96 / 0.91) but mask AP ~0.001; every other class's mask is close to its box. Re-evaluated with overlap_mask=False: unchanged (0.615 overall), so not an evaluation artifact. Prediction samples show confident trousers boxes with EMPTY masks; labels checked and correct. Likely cause: DF2 outlines of lower-body garments include the part hidden under the top, and YOLO's default overlap_mask=True training merges overlapping targets. Without these 2 classes, mask mAP50 ~0.71
+- **Street-to-shop test (src/eval_street2shop.py):** 3,000 DF2 street items -> all DF2 shop items (ground-truth box crops) -> exact same item (pair_id + style). Recall@10 at alpha 0.5: full photo 0.125, perfect box 0.271, perfect mask 0.266, our YOLO 0.204 (Recall@1: 0.057 / 0.134 / 0.132 / 0.097). Results in runs/street2shop_results.csv
+- **Findings:** (1) the detector helps a lot on street photos (+63% Recall@10, +70% Recall@1 vs the full photo); (2) mask crops = box crops for search, so masks are not needed and the trousers/shorts mask fix (1 h GPU) is skipped; (3) the hybrid beats pure design and pure colour on every crop type, and alpha 0.5 gives the best Recall@1 (0.75 is within 0.01 on Recall@10) -> alpha 0.5 confirmed as final
+- **Context:** the search models never saw a street photo or DeepFashion2 (trained only on H&M studio shots); future work: fine-tune the metric model on DF2 street-shop pairs
+- **Impact (src/predict.py):** YOLO first; every detection with confidence >= 0.5 (max 3) cut out by its box (+5% margin), each gets tags + top-10; no confident detection (bags, clean product shots) -> full photo; --no-detect skips YOLO
+
+## D26. YOLO's garment type as a group hint for tags and search
+- **Evidence (demo on clean photos of people wearing outfits):** YOLO named the garments correctly (skirt 0.92, short sleeve top 0.80, trousers 0.92), but the tagger, trained on flat H&M product shots, mislabelled worn crops (striped tee -> "Shoes 38%", white skirt -> "Upper body 44%"), and the skirt's top-10 became white shirts; colour tags stayed right
+- **Method:** map YOLO's 13 DeepFashion2 types -> H&M group (tops / vests / outwear / slings -> Upper body; trousers / shorts / skirts -> Lower body; dresses -> Full body). Final group = YOLO's group when the tagger disagrees or is below 60%; search takes the top 200 and ranks products of that group first (score order kept)
+- **Reason:** YOLO was trained on worn clothes, so on street photos its type is more reliable than the tagger; no training needed, combines two outputs
+- **Known limitation:** garments lying sideways (e.g. jeans on a bed) still search poorly: CNNs are not rotation-invariant and H&M photos are upright
+- **Impact:** src/predict.py (GROUP_OF, final_group, search with hint), notebooks/demo.ipynb (group_hint option, before/after)
+
+## D27. Recommender: LSTM chosen (transformer ties); output 3 back on
+- **Training (src/train_recommender.py):** next-item prediction over 656,182 purchase sequences (max 50 items), 64-d item embeddings tied with the output layer, cross-entropy over 29,882 items, AdamW lr 1e-3 / wd 1e-4, batch 256, fp16, 10 epochs max, patience 2 on val-week MAP@12
+- **Evidence (val week, MAP@12 full history / last item only):** popularity 0.0066 / 0.0066; co-purchase 0.0115 / 0.0097; LSTM (1 layer) 0.0217 / 0.0197; transformer (2 layers, 2 heads, causal mask) 0.0215 / 0.0198. Both still improving slowly at epoch 10
+- **Choice:** LSTM, by the pre-set rule (best val MAP@12 on full history), and it is the simpler model; on short histories (median 7 items) attention gives no gain over the LSTM's gated memory
+- **Impact:** src/predict.py ENABLE_RECS = True, REC_MODEL = "lstm"; the first top-10 match in the vocabulary is the 1-item input; otherwise "trending now" (best-sellers of 16-22 Sep 2020)
+
+## D28. Final test-set evaluation (run once, 23 Nov 2026)
+- **Options:** keep reporting validation numbers only; evaluate every final component once on the untouched test data
+- **Evidence:** `src/evaluate_test.py` → `runs/test_results.json`. Tags 93.9% / 82.8% (val 94.1 / 82.3). ArcFace Recall@10 0.801 (val 0.799); hybrid 0.485 (val 0.491). MAP@12 LSTM 0.0200 vs co-purchase 0.0106 vs popularity 0.0087 (test week 16–22 Sep). YOLO box mAP50 0.779 on 5,000 unseen DF2 photos
+- **Reason:** validation numbers were used to choose models and settings, so they are slightly optimistic; the test set gives the honest final estimate
+- **Impact:** test numbers match validation closely → the models generalise. No model or setting was changed after seeing them
