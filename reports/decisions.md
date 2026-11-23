@@ -145,3 +145,12 @@ Format: Decision · Options considered · Evidence · Reason · Impact
 - **Hybrid:** score = alpha * cos(ImageNet) + (1 - alpha) * cos(fine-tuned B), done by concatenating sqrt-weighted fingerprints. alpha 0 / 0.25 / 0.5 / 0.75 / 1 -> Recall@10 0.159 / 0.185 / 0.215 / 0.261 / 0.360, colour match 0.782 / 0.775 / 0.759 / 0.718 / 0.461
 - **Choice:** alpha = 0.5: keeps colour (0.759) and type (0.927) match near the maximum while design recall rises 35%; galleries look right on all 5 queries (same type, same colour, siblings near the top). Re-checked after metric learning
 - **Impact:** notebooks/07_search.ipynb; figures search_*.png
+
+## D24. Search: ArcFace metric model for the design half; hybrid with ft_ls (provisional alpha 0.5)
+- **Training (src/train_metric.py):** ImageNet ResNet-50 + Linear 2048->512 + BN, L2-normalised; ArcFace over 33,401 train designs (s = 30, m = 0.3); colour-invariance augmentation: brightness/contrast/saturation jitter + 20% grayscale (hue jitter dropped: CPU-heavy); AdamW 1e-4 backbone / 1e-3 heads; epoch picked by val Recall@10 (val-only gallery): 0.551 before training -> 0.902 at epoch 9 (10 epochs run)
+- **Speed note:** the first run crawled at 2.88 s/batch because the laptop GPU was power-capped (P5, 25 W; fixed by charger/performance mode -> P0, ~80-93 W, ~7 min per epoch)
+- **Evidence (full 104k catalogue, 11,437 val queries):** metric alone Recall@1 0.500, Recall@10 0.799 (ImageNet 0.141 / 0.360), group match 0.914, colour match 0.242 (colour-blind by design)
+- **Hybrid sweep (design half = metric, colour half = ft_ls):** alpha 0.25 / 0.5 / 0.75 -> Recall@10 0.284 / 0.491 / 0.746, colour match 0.763 / 0.692 / 0.492, group 0.932 / 0.935 / 0.935. Even alpha 0.25 beats the D23 hybrid on every column
+- **Choice:** metric + ft_ls, alpha 0.5 (Recall@10 2.3x the D23 pick, best type match, colour mostly kept). Provisional: the colour-vs-design conflict exists only in the sibling test (siblings are always another colour); in real street-to-shop the target has the same design AND colour, so the final alpha is chosen on DeepFashion2 street-to-shop pairs (Phase 5)
+- **Product feature:** the user can pick the mix in the demo (--match design / balanced / colour = alpha 1 / 0.5 / 0.25); same fingerprints, only the weight changes
+- **Impact:** final search = 2 models (ft_ls also gives the tags, so only one extra ResNet pass); figures search_metric.png, search_hybrid_metric_*.png

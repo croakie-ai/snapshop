@@ -4,6 +4,7 @@ Backbones (pick with --model):
   imagenet : plain ImageNet ResNet-50, never trained on our data   (baseline)
   ft       : our fine-tuned ResNet-50, run A                       (Phase 3)
   ft_ls    : fine-tuned + label smoothing, run B                   (Phase 3 best)
+  metric   : ResNet-50 + ArcFace metric learning (512-d)          (Phase 4, trained for search)
 
 Each photo -> 2,048 numbers -> scaled to length 1 (L2-normalised), so that
 cosine similarity = a simple dot product (what FAISS will compute).
@@ -26,6 +27,7 @@ from tqdm import tqdm
 
 from data.images import IMG_DIR, SPLITS, get_transforms
 from train_finetune import MultiHeadResNet
+from train_metric import Embedder
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "processed"
@@ -49,6 +51,10 @@ class Catalogue(Dataset):
 
 
 def load_backbone(name: str) -> torch.nn.Module:
+    if name == "metric":
+        net = Embedder()
+        net.load_state_dict(torch.load(ROOT / "runs" / "metric_arcface.pt", map_location="cpu"))
+        return net                      # already outputs the 512-number design fingerprint
     if name == "imagenet":
         net = resnet50(weights=ResNet50_Weights.DEFAULT)
         net.fc = torch.nn.Identity()
@@ -61,7 +67,7 @@ def load_backbone(name: str) -> torch.nn.Module:
 @torch.no_grad()
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", choices=["imagenet", "ft", "ft_ls"], required=True)
+    ap.add_argument("--model", choices=["imagenet", "ft", "ft_ls", "metric"], required=True)
     args = ap.parse_args()
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
