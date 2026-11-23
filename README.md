@@ -91,7 +91,3 @@ Details, known issues and biases: [`reports/dataset_card.md`](reports/dataset_ca
 - Tags on worn garments are weaker than on product shots; YOLO's garment type is used as a hint to correct them.
 - YOLO's trousers/shorts masks come out empty, so crops use boxes.
 - MAP@12 is small in absolute terms (people buy ~2 of ~30K items a week); the LSTM roughly doubles counting-based recommendations.
-
-## AI assistance disclosure
-
-Claude (Anthropic) was used as a tutor and coding assistant: explaining concepts, suggesting approaches and drafting parts of the code. All runs, results and decisions were executed, checked and logged by the author.
