@@ -1,0 +1,2815 @@
+[
+ {
+  "photo": "data/street_test/person_shirt_trousers.jpg",
+  "width": 468,
+  "height": 833,
+  "garments": [
+   {
+    "yolo_class": "long sleeve top",
+    "yolo_conf": 0.922,
+    "box": [
+     116.8,
+     163.7,
+     279.8,
+     404.4
+    ],
+    "crop_box": [
+     108.6,
+     151.7,
+     288.0,
+     416.5
+    ],
+    "group": "Garment Upper body",
+    "group_source": "89%",
+    "group_top3": [
+     [
+      "Garment Upper body",
+      0.8854751586914062
+     ],
+     [
+      "Socks & Tights",
+      0.024472147226333618
+     ],
+     [
+      "Garment Full body",
+      0.02399352751672268
+     ]
+    ],
+    "colour": "White",
+    "colour_conf": 0.587,
+    "colour_top3": [
+     [
+      "White",
+      0.5868492722511292
+     ],
+     [
+      "Black",
+      0.2489841729402542
+     ],
+     [
+      "Turquoise",
+      0.05024808272719383
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0589004005",
+      "score": 0.4258,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0678490001",
+      "score": 0.389,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0687734001",
+      "score": 0.3501,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0698629001",
+      "score": 0.3448,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0610032004",
+      "score": 0.3444,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0646547001",
+      "score": 0.3414,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0661807001",
+      "score": 0.3323,
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0560270015",
+      "score": 0.3321,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0834983001",
+      "score": 0.3309,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0525590001",
+      "score": 0.3277,
+      "group": "Garment Upper body",
+      "colour": "White"
+     }
+    ],
+    "buy_next_seed": "0687734001",
+    "buy_next": [
+     {
+      "id": "0751994006",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0636207006",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0751994003",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0781758001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0685816001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0636207010",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0751994024",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0816265002",
+      "group": "Garment Lower body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0781758057",
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0814631001",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0751994007",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0710876019",
+      "group": "Garment Lower body",
+      "colour": "Grey"
+     }
+    ]
+   },
+   {
+    "yolo_class": "trousers",
+    "yolo_conf": 0.92,
+    "box": [
+     118.3,
+     355.7,
+     231.7,
+     649.3
+    ],
+    "crop_box": [
+     112.6,
+     341.0,
+     237.3,
+     664.0
+    ],
+    "group": "Garment Lower body",
+    "group_source": "from detector",
+    "group_top3": [
+     [
+      "Garment Lower body",
+      0.5477234721183777
+     ],
+     [
+      "Garment Upper body",
+      0.10870947688817978
+     ],
+     [
+      "Socks & Tights",
+      0.09087791293859482
+     ]
+    ],
+    "colour": "Black",
+    "colour_conf": 0.949,
+    "colour_top3": [
+     [
+      "Black",
+      0.9488479495048523
+     ],
+     [
+      "Turquoise",
+      0.007227539550513029
+     ],
+     [
+      "Green",
+      0.007113095372915268
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0884950001",
+      "score": 0.3978,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0698100001",
+      "score": 0.3728,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0774410004",
+      "score": 0.3724,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0563477005",
+      "score": 0.3663,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0501118010",
+      "score": 0.3617,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0610126001",
+      "score": 0.3589,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0561067001",
+      "score": 0.3571,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0712950005",
+      "score": 0.3567,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0752607009",
+      "score": 0.3557,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0615666004",
+      "score": 0.3555,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     }
+    ],
+    "buy_next_seed": "0752607009",
+    "buy_next": [
+     {
+      "id": "0832361001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0882888002",
+      "group": "Garment Lower body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0760084003",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0863001001",
+      "group": "Garment Full body",
+      "colour": "Black"
+     },
+     {
+      "id": "0845790002",
+      "group": "Garment Lower body",
+      "colour": "Lilac Purple"
+     },
+     {
+      "id": "0838920001",
+      "group": "Garment Full body",
+      "colour": "Black"
+     },
+     {
+      "id": "0720125001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0808698004",
+      "group": "Shoes",
+      "colour": "White"
+     },
+     {
+      "id": "0817491004",
+      "group": "Garment Full body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0877278002",
+      "group": "Garment Lower body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0716672001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0349301001",
+      "group": "Shoes",
+      "colour": "Black"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "photo": "data/street_test/person_stripes_skirt.jpg",
+  "width": 640,
+  "height": 960,
+  "garments": [
+   {
+    "yolo_class": "skirt",
+    "yolo_conf": 0.917,
+    "box": [
+     210.6,
+     525.5,
+     540.6,
+     853.5
+    ],
+    "crop_box": [
+     194.1,
+     509.1,
+     557.1,
+     869.9
+    ],
+    "group": "Garment Lower body",
+    "group_source": "from detector",
+    "group_top3": [
+     [
+      "Garment Upper body",
+      0.4392174184322357
+     ],
+     [
+      "Garment Full body",
+      0.15390588343143463
+     ],
+     [
+      "Accessories",
+      0.13219033181667328
+     ]
+    ],
+    "colour": "White",
+    "colour_conf": 0.972,
+    "colour_top3": [
+     [
+      "White",
+      0.9719610214233398
+     ],
+     [
+      "Pink",
+      0.006444273982197046
+     ],
+     [
+      "Metal",
+      0.003897856455296278
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0608375001",
+      "score": 0.4211,
+      "group": "Garment Lower body",
+      "colour": "White"
+     },
+     {
+      "id": "0608656006",
+      "score": 0.3506,
+      "group": "Garment Lower body",
+      "colour": "White"
+     },
+     {
+      "id": "0608570001",
+      "score": 0.3337,
+      "group": "Garment Lower body",
+      "colour": "White"
+     },
+     {
+      "id": "0638655003",
+      "score": 0.3262,
+      "group": "Garment Lower body",
+      "colour": "White"
+     },
+     {
+      "id": "0129085026",
+      "score": 0.3225,
+      "group": "Garment Lower body",
+      "colour": "White"
+     },
+     {
+      "id": "0618480003",
+      "score": 0.305,
+      "group": "Garment Lower body",
+      "colour": "White"
+     },
+     {
+      "id": "0623332001",
+      "score": 0.303,
+      "group": "Garment Lower body",
+      "colour": "White"
+     },
+     {
+      "id": "0739289001",
+      "score": 0.3022,
+      "group": "Garment Lower body",
+      "colour": "White"
+     },
+     {
+      "id": "0249136011",
+      "score": 0.3012,
+      "group": "Garment Lower body",
+      "colour": "White"
+     },
+     {
+      "id": "0634050008",
+      "score": 0.3009,
+      "group": "Garment Lower body",
+      "colour": "White"
+     }
+    ],
+    "buy_next_seed": "0129085026",
+    "buy_next": [
+     {
+      "id": "0129085001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0768847001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0768912001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0554598001",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0865520002",
+      "group": "Garment Full body",
+      "colour": "White"
+     },
+     {
+      "id": "0816563003",
+      "group": "Garment Lower body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0711582001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0816166006",
+      "group": "Garment Full body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0824997001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0664074001",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0856840004",
+      "group": "Garment Full body",
+      "colour": "Black"
+     },
+     {
+      "id": "0778064003",
+      "group": "Garment Upper body",
+      "colour": "White"
+     }
+    ]
+   },
+   {
+    "yolo_class": "short sleeve top",
+    "yolo_conf": 0.804,
+    "box": [
+     151.3,
+     266.7,
+     537.6,
+     542.7
+    ],
+    "crop_box": [
+     132.0,
+     252.9,
+     556.9,
+     556.5
+    ],
+    "group": "Garment Upper body",
+    "group_source": "from detector",
+    "group_top3": [
+     [
+      "Shoes",
+      0.37715014815330505
+     ],
+     [
+      "Underwear",
+      0.13173094391822815
+     ],
+     [
+      "Garment Upper body",
+      0.1290261298418045
+     ]
+    ],
+    "colour": "Blue",
+    "colour_conf": 0.658,
+    "colour_top3": [
+     [
+      "Blue",
+      0.658014178276062
+     ],
+     [
+      "White",
+      0.16677331924438477
+     ],
+     [
+      "Lilac Purple",
+      0.05360323563218117
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0617201002",
+      "score": 0.3461,
+      "group": "Garment Upper body",
+      "colour": "Brown"
+     },
+     {
+      "id": "0679633001",
+      "score": 0.3403,
+      "group": "Garment Upper body",
+      "colour": "Brown"
+     },
+     {
+      "id": "0617201001",
+      "score": 0.3368,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0508542004",
+      "score": 0.3262,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0565321006",
+      "score": 0.324,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0703338005",
+      "score": 0.3218,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0632376001",
+      "score": 0.3196,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0700907008",
+      "score": 0.3178,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0634541002",
+      "score": 0.3124,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0636178003",
+      "score": 0.3109,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     }
+    ],
+    "buy_next_seed": "0703338005",
+    "buy_next": [
+     {
+      "id": "0810169001",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0534164001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0810169016",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0768912001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0810169003",
+      "group": "Garment Lower body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0757395001",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0794321005",
+      "group": "Garment Upper body",
+      "colour": "Red"
+     },
+     {
+      "id": "0855792002",
+      "group": "Garment Full body",
+      "colour": "Orange"
+     },
+     {
+      "id": "0851936002",
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0757395009",
+      "group": "Garment Upper body",
+      "colour": "Yellow"
+     },
+     {
+      "id": "0825210001",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0857778001",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "photo": "data/street_test/person_top_skirt.jpg",
+  "width": 880,
+  "height": 1320,
+  "garments": [
+   {
+    "yolo_class": "long sleeve top",
+    "yolo_conf": 0.952,
+    "box": [
+     329.9,
+     434.7,
+     603.5,
+     753.1
+    ],
+    "crop_box": [
+     316.3,
+     418.7,
+     617.2,
+     769.0
+    ],
+    "group": "Garment Upper body",
+    "group_source": "83%",
+    "group_top3": [
+     [
+      "Garment Upper body",
+      0.8324648141860962
+     ],
+     [
+      "Garment Full body",
+      0.15814995765686035
+     ],
+     [
+      "Shoes",
+      0.002438983879983425
+     ]
+    ],
+    "colour": "White",
+    "colour_conf": 0.572,
+    "colour_top3": [
+     [
+      "White",
+      0.5724892020225525
+     ],
+     [
+      "Blue",
+      0.16026027500629425
+     ],
+     [
+      "Beige",
+      0.09234686940908432
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0545865001",
+      "score": 0.3613,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0621248004",
+      "score": 0.3588,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0577175001",
+      "score": 0.3582,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0523137001",
+      "score": 0.3507,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0621914001",
+      "score": 0.3491,
+      "group": "Garment Upper body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0668075005",
+      "score": 0.3454,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0634036001",
+      "score": 0.3425,
+      "group": "Garment Upper body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0584306001",
+      "score": 0.3402,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0630416001",
+      "score": 0.3397,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0639139003",
+      "score": 0.3382,
+      "group": "Garment Upper body",
+      "colour": "White"
+     }
+    ],
+    "buy_next_seed": "0621914001",
+    "buy_next": [
+     {
+      "id": "0685811001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0685813001",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0685811002",
+      "group": "Garment Lower body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0685816002",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0759814009",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0759871002",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0608945001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0685816041",
+      "group": "Garment Upper body",
+      "colour": "Green"
+     },
+     {
+      "id": "0608945008",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0591466024",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0685816001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0856109001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     }
+    ]
+   },
+   {
+    "yolo_class": "skirt",
+    "yolo_conf": 0.924,
+    "box": [
+     331.5,
+     602.2,
+     577.3,
+     833.0
+    ],
+    "crop_box": [
+     319.2,
+     590.6,
+     589.6,
+     844.6
+    ],
+    "group": "Garment Lower body",
+    "group_source": "from detector",
+    "group_top3": [
+     [
+      "Garment Upper body",
+      0.8539415001869202
+     ],
+     [
+      "Accessories",
+      0.14544178545475006
+     ],
+     [
+      "Shoes",
+      0.0005253552808426321
+     ]
+    ],
+    "colour": "Black",
+    "colour_conf": 0.999,
+    "colour_top3": [
+     [
+      "Black",
+      0.9994795918464661
+     ],
+     [
+      "Metal",
+      0.0003963580238632858
+     ],
+     [
+      "Yellow",
+      3.657221532193944e-05
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0669026002",
+      "score": 0.6193,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0713370001",
+      "score": 0.5418,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0659295003",
+      "score": 0.5319,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0727347003",
+      "score": 0.5315,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0828852002",
+      "score": 0.5254,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0639360001",
+      "score": 0.5169,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0664209001",
+      "score": 0.5127,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0543556006",
+      "score": 0.5058,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0584987001",
+      "score": 0.5002,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0700976001",
+      "score": 0.4966,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     }
+    ],
+    "buy_next_seed": "0828852002",
+    "buy_next": [
+     {
+      "id": "0690936026",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0824764001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0767862001",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0883719001",
+      "group": "Accessories",
+      "colour": "Brown"
+     },
+     {
+      "id": "0816563001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0572797002",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0690936013",
+      "group": "Garment Lower body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0926306002",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0824764007",
+      "group": "Garment Upper body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0824764005",
+      "group": "Garment Upper body",
+      "colour": "Red"
+     },
+     {
+      "id": "0775382001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0803772002",
+      "group": "Garment Upper body",
+      "colour": "White"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "photo": "data/street_test/person_tee_shorts.jpg",
+  "width": 640,
+  "height": 960,
+  "garments": [
+   {
+    "yolo_class": "short sleeve top",
+    "yolo_conf": 0.939,
+    "box": [
+     245.1,
+     222.3,
+     478.5,
+     482.2
+    ],
+    "crop_box": [
+     233.5,
+     209.3,
+     490.2,
+     495.2
+    ],
+    "group": "Garment Upper body",
+    "group_source": "85%",
+    "group_top3": [
+     [
+      "Garment Upper body",
+      0.854941725730896
+     ],
+     [
+      "Underwear",
+      0.041490595787763596
+     ],
+     [
+      "Garment Full body",
+      0.032559383660554886
+     ]
+    ],
+    "colour": "Black",
+    "colour_conf": 0.686,
+    "colour_top3": [
+     [
+      "Black",
+      0.6855462789535522
+     ],
+     [
+      "Blue",
+      0.15607188642024994
+     ],
+     [
+      "Green",
+      0.051208265125751495
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0551257001",
+      "score": 0.3609,
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0565419003",
+      "score": 0.3273,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0610826001",
+      "score": 0.3258,
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0611050002",
+      "score": 0.323,
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0502424001",
+      "score": 0.3215,
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0632495003",
+      "score": 0.321,
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0497637010",
+      "score": 0.3178,
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0554227001",
+      "score": 0.3174,
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0579121003",
+      "score": 0.3174,
+      "group": "Garment Upper body",
+      "colour": "Green"
+     },
+     {
+      "id": "0573231003",
+      "score": 0.3169,
+      "group": "Garment Upper body",
+      "colour": "Lilac Purple"
+     }
+    ],
+    "buy_next_seed": "0611050002",
+    "buy_next": [
+     {
+      "id": "0789147006",
+      "group": "Garment Full body",
+      "colour": "Black"
+     },
+     {
+      "id": "0803592003",
+      "group": "Garment Full body",
+      "colour": "Khaki green"
+     },
+     {
+      "id": "0825182002",
+      "group": "Garment Full body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0790791004",
+      "group": "Garment Upper body",
+      "colour": "Khaki green"
+     },
+     {
+      "id": "0878510004",
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0806528009",
+      "group": "Garment Lower body",
+      "colour": "Khaki green"
+     },
+     {
+      "id": "0878353001",
+      "group": "Garment Full body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0846581002",
+      "group": "Garment Full body",
+      "colour": "Black"
+     },
+     {
+      "id": "0817150005",
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0640539002",
+      "group": "Garment Upper body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0794389004",
+      "group": "Garment Full body",
+      "colour": "White"
+     },
+     {
+      "id": "0805308004",
+      "group": "Shoes",
+      "colour": "Turquoise"
+     }
+    ]
+   },
+   {
+    "yolo_class": "shorts",
+    "yolo_conf": 0.908,
+    "box": [
+     210.2,
+     443.2,
+     406.4,
+     646.3
+    ],
+    "crop_box": [
+     200.4,
+     433.1,
+     416.2,
+     656.4
+    ],
+    "group": "Garment Lower body",
+    "group_source": "from detector",
+    "group_top3": [
+     [
+      "Garment Upper body",
+      0.6703089475631714
+     ],
+     [
+      "Garment Lower body",
+      0.13818205893039703
+     ],
+     [
+      "Garment Full body",
+      0.08762913197278976
+     ]
+    ],
+    "colour": "Turquoise",
+    "colour_conf": 0.518,
+    "colour_top3": [
+     [
+      "Turquoise",
+      0.5177099704742432
+     ],
+     [
+      "White",
+      0.1582462042570114
+     ],
+     [
+      "Black",
+      0.05682427063584328
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0456011001",
+      "score": 0.3627,
+      "group": "Garment Lower body",
+      "colour": "White"
+     },
+     {
+      "id": "0568040002",
+      "score": 0.3442,
+      "group": "Garment Lower body",
+      "colour": "Green"
+     },
+     {
+      "id": "0549135001",
+      "score": 0.3188,
+      "group": "Garment Lower body",
+      "colour": "Metal"
+     },
+     {
+      "id": "0640959001",
+      "score": 0.3176,
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0617280003",
+      "score": 0.3152,
+      "group": "Garment Lower body",
+      "colour": "Turquoise"
+     },
+     {
+      "id": "0571982019",
+      "score": 0.3098,
+      "group": "Garment Lower body",
+      "colour": "White"
+     },
+     {
+      "id": "0579577001",
+      "score": 0.3033,
+      "group": "Garment Lower body",
+      "colour": "White"
+     },
+     {
+      "id": "0589840001",
+      "score": 0.2944,
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0539470001",
+      "score": 0.2929,
+      "group": "Garment Lower body",
+      "colour": "Turquoise"
+     },
+     {
+      "id": "0500373003",
+      "score": 0.2818,
+      "group": "Garment Lower body",
+      "colour": "Pink"
+     }
+    ],
+    "buy_next_seed": null,
+    "buy_next": [
+     {
+      "id": "0924243001",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0924243002",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0918522001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0866731001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0909370001",
+      "group": "Garment Full body",
+      "colour": "White"
+     },
+     {
+      "id": "0751471001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0915529003",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0915529005",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0448509014",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0762846027",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0714790020",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "photo": "data/street_test/demo/sweater_denim_skirt.jpg",
+  "width": 640,
+  "height": 968,
+  "garments": [
+   {
+    "yolo_class": "long sleeve top",
+    "yolo_conf": 0.932,
+    "box": [
+     221.0,
+     245.6,
+     471.4,
+     540.9
+    ],
+    "crop_box": [
+     208.5,
+     230.8,
+     484.0,
+     555.7
+    ],
+    "group": "Garment Upper body",
+    "group_source": "from detector",
+    "group_top3": [
+     [
+      "Garment Full body",
+      0.617386519908905
+     ],
+     [
+      "Garment Upper body",
+      0.1424335092306137
+     ],
+     [
+      "Garment Lower body",
+      0.13141639530658722
+     ]
+    ],
+    "colour": "Blue",
+    "colour_conf": 0.886,
+    "colour_top3": [
+     [
+      "Blue",
+      0.8863176107406616
+     ],
+     [
+      "Pink",
+      0.021887244656682014
+     ],
+     [
+      "White",
+      0.018986746668815613
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0643401001",
+      "score": 0.4044,
+      "group": "Garment Upper body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0618017002",
+      "score": 0.3789,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0647680002",
+      "score": 0.3781,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0594640001",
+      "score": 0.3699,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0549333002",
+      "score": 0.349,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0504209001",
+      "score": 0.3448,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0600699001",
+      "score": 0.3398,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0651272001",
+      "score": 0.3387,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0594640002",
+      "score": 0.3384,
+      "group": "Garment Upper body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0348330026",
+      "score": 0.335,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     }
+    ],
+    "buy_next_seed": null,
+    "buy_next": [
+     {
+      "id": "0924243001",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0924243002",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0918522001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0866731001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0909370001",
+      "group": "Garment Full body",
+      "colour": "White"
+     },
+     {
+      "id": "0751471001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0915529003",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0915529005",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0448509014",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0762846027",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0714790020",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     }
+    ]
+   },
+   {
+    "yolo_class": "skirt",
+    "yolo_conf": 0.916,
+    "box": [
+     200.6,
+     410.9,
+     409.4,
+     888.2
+    ],
+    "crop_box": [
+     190.2,
+     387.1,
+     419.9,
+     912.1
+    ],
+    "group": "Garment Lower body",
+    "group_source": "90%",
+    "group_top3": [
+     [
+      "Garment Lower body",
+      0.8958393931388855
+     ],
+     [
+      "Garment Full body",
+      0.042620040476322174
+     ],
+     [
+      "Garment Upper body",
+      0.012643616646528244
+     ]
+    ],
+    "colour": "Blue",
+    "colour_conf": 0.915,
+    "colour_top3": [
+     [
+      "Blue",
+      0.9147263765335083
+     ],
+     [
+      "Turquoise",
+      0.015221409499645233
+     ],
+     [
+      "White",
+      0.00877296831458807
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0501123001",
+      "score": 0.4351,
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0583757001",
+      "score": 0.4337,
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0597743002",
+      "score": 0.4285,
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0808318003",
+      "score": 0.4233,
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0884950002",
+      "score": 0.4187,
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0535016001",
+      "score": 0.4182,
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0690156002",
+      "score": 0.4159,
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0625178002",
+      "score": 0.4138,
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0579941002",
+      "score": 0.4124,
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0552346011",
+      "score": 0.4074,
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     }
+    ],
+    "buy_next_seed": null,
+    "buy_next": [
+     {
+      "id": "0924243001",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0924243002",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0918522001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0866731001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0909370001",
+      "group": "Garment Full body",
+      "colour": "White"
+     },
+     {
+      "id": "0751471001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0915529003",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0915529005",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0448509014",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0762846027",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0714790020",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "photo": "data/street_test/demo/white_top_pink_skirt.jpg",
+  "width": 880,
+  "height": 1320,
+  "garments": [
+   {
+    "yolo_class": "long sleeve top",
+    "yolo_conf": 0.955,
+    "box": [
+     216.6,
+     317.8,
+     829.0,
+     916.2
+    ],
+    "crop_box": [
+     186.0,
+     287.9,
+     859.6,
+     946.1
+    ],
+    "group": "Garment Upper body",
+    "group_source": "from detector",
+    "group_top3": [
+     [
+      "Garment Upper body",
+      0.44141682982444763
+     ],
+     [
+      "Accessories",
+      0.21349036693572998
+     ],
+     [
+      "Garment Full body",
+      0.1691816747188568
+     ]
+    ],
+    "colour": "White",
+    "colour_conf": 0.543,
+    "colour_top3": [
+     [
+      "White",
+      0.5434308052062988
+     ],
+     [
+      "Blue",
+      0.16515512764453888
+     ],
+     [
+      "Pink",
+      0.0951206162571907
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0639139003",
+      "score": 0.3227,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0597533001",
+      "score": 0.3172,
+      "group": "Garment Upper body",
+      "colour": "Lilac Purple"
+     },
+     {
+      "id": "0663573001",
+      "score": 0.3098,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0597333007",
+      "score": 0.2967,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0625650001",
+      "score": 0.2958,
+      "group": "Garment Upper body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0625705004",
+      "score": 0.2925,
+      "group": "Garment Upper body",
+      "colour": "Lilac Purple"
+     },
+     {
+      "id": "0755780003",
+      "score": 0.2869,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0649743001",
+      "score": 0.2789,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0651272001",
+      "score": 0.2762,
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0578250001",
+      "score": 0.2755,
+      "group": "Garment Upper body",
+      "colour": "White"
+     }
+    ],
+    "buy_next_seed": null,
+    "buy_next": [
+     {
+      "id": "0924243001",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0924243002",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0918522001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0866731001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0909370001",
+      "group": "Garment Full body",
+      "colour": "White"
+     },
+     {
+      "id": "0751471001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0915529003",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0915529005",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0448509014",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0762846027",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0714790020",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     }
+    ]
+   },
+   {
+    "yolo_class": "skirt",
+    "yolo_conf": 0.859,
+    "box": [
+     295.0,
+     711.0,
+     742.8,
+     1148.0
+    ],
+    "crop_box": [
+     272.6,
+     689.2,
+     765.2,
+     1169.8
+    ],
+    "group": "Garment Lower body",
+    "group_source": "from detector",
+    "group_top3": [
+     [
+      "Garment Upper body",
+      0.25386521220207214
+     ],
+     [
+      "Shoes",
+      0.19619916379451752
+     ],
+     [
+      "Accessories",
+      0.11784279346466064
+     ]
+    ],
+    "colour": "Pink",
+    "colour_conf": 0.885,
+    "colour_top3": [
+     [
+      "Pink",
+      0.8853470087051392
+     ],
+     [
+      "Lilac Purple",
+      0.09097132086753845
+     ],
+     [
+      "Turquoise",
+      0.007041711825877428
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0734537002",
+      "score": 0.4037,
+      "group": "Garment Lower body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0608570003",
+      "score": 0.3928,
+      "group": "Garment Lower body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0781381003",
+      "score": 0.3917,
+      "group": "Garment Lower body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0620208081",
+      "score": 0.3912,
+      "group": "Garment Lower body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0510407061",
+      "score": 0.3704,
+      "group": "Garment Lower body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0395658050",
+      "score": 0.3636,
+      "group": "Garment Lower body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0478566027",
+      "score": 0.3552,
+      "group": "Garment Lower body",
+      "colour": "Lilac Purple"
+     },
+     {
+      "id": "0620208066",
+      "score": 0.3537,
+      "group": "Garment Lower body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0806527004",
+      "score": 0.3529,
+      "group": "Garment Lower body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0520509003",
+      "score": 0.3525,
+      "group": "Garment Lower body",
+      "colour": "Pink"
+     }
+    ],
+    "buy_next_seed": "0781381003",
+    "buy_next": [
+     {
+      "id": "0826252001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0695632002",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0817150005",
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0882888002",
+      "group": "Garment Lower body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0750424016",
+      "group": "Garment Lower body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0808629007",
+      "group": "Shoes",
+      "colour": "Black"
+     },
+     {
+      "id": "0861767002",
+      "group": "Garment Lower body",
+      "colour": "Brown"
+     },
+     {
+      "id": "0805308004",
+      "group": "Shoes",
+      "colour": "Turquoise"
+     },
+     {
+      "id": "0840947003",
+      "group": "Garment Lower body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0835852003",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0835417001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0697564010",
+      "group": "Garment Upper body",
+      "colour": "White"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "photo": "data/street_test/demo/floral_dress.jpg",
+  "width": 750,
+  "height": 668,
+  "garments": [
+   {
+    "yolo_class": "short sleeve dress",
+    "yolo_conf": 0.958,
+    "box": [
+     310.3,
+     224.4,
+     618.8,
+     616.3
+    ],
+    "crop_box": [
+     294.9,
+     204.8,
+     634.2,
+     635.9
+    ],
+    "group": "Garment Full body",
+    "group_source": "from detector",
+    "group_top3": [
+     [
+      "Garment Upper body",
+      0.8147946000099182
+     ],
+     [
+      "Shoes",
+      0.07067246735095978
+     ],
+     [
+      "Garment Full body",
+      0.05676499381661415
+     ]
+    ],
+    "colour": "Black",
+    "colour_conf": 0.83,
+    "colour_top3": [
+     [
+      "Black",
+      0.8303109407424927
+     ],
+     [
+      "Green",
+      0.03854866698384285
+     ],
+     [
+      "Orange",
+      0.03741806000471115
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0551462015",
+      "score": 0.3019,
+      "group": "Garment Full body",
+      "colour": "Black"
+     },
+     {
+      "id": "0613529001",
+      "score": 0.3014,
+      "group": "Garment Full body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0827349002",
+      "score": 0.2903,
+      "group": "Garment Full body",
+      "colour": "Green"
+     },
+     {
+      "id": "0640418002",
+      "score": 0.2851,
+      "group": "Garment Full body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0683317001",
+      "score": 0.2846,
+      "group": "Garment Full body",
+      "colour": "Black"
+     },
+     {
+      "id": "0657252001",
+      "score": 0.2845,
+      "group": "Garment Full body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0675270001",
+      "score": 0.2841,
+      "group": "Garment Full body",
+      "colour": "Black"
+     },
+     {
+      "id": "0639833002",
+      "score": 0.2807,
+      "group": "Garment Full body",
+      "colour": "Black"
+     },
+     {
+      "id": "0646645001",
+      "score": 0.2794,
+      "group": "Garment Full body",
+      "colour": "Khaki green"
+     },
+     {
+      "id": "0725881001",
+      "score": 0.2745,
+      "group": "Garment Full body",
+      "colour": "Black"
+     }
+    ],
+    "buy_next_seed": "0827349002",
+    "buy_next": [
+     {
+      "id": "0817491004",
+      "group": "Garment Full body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0860264002",
+      "group": "Garment Full body",
+      "colour": "Black"
+     },
+     {
+      "id": "0843373001",
+      "group": "Garment Lower body",
+      "colour": "Red"
+     },
+     {
+      "id": "0892937002",
+      "group": "Garment Full body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0817491001",
+      "group": "Garment Full body",
+      "colour": "Black"
+     },
+     {
+      "id": "0743024003",
+      "group": "Garment Full body",
+      "colour": "White"
+     },
+     {
+      "id": "0855145001",
+      "group": "Garment Full body",
+      "colour": "Pink"
+     },
+     {
+      "id": "0806916008",
+      "group": "Garment Full body",
+      "colour": "Green"
+     },
+     {
+      "id": "0861847005",
+      "group": "Garment Full body",
+      "colour": "Black"
+     },
+     {
+      "id": "0714620005",
+      "group": "Garment Full body",
+      "colour": "Brown"
+     },
+     {
+      "id": "0794454002",
+      "group": "Garment Full body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0836120002",
+      "group": "Garment Full body",
+      "colour": "Pink"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "photo": "data/street_test/demo/grey_hoodie_street.jpg",
+  "width": 387,
+  "height": 516,
+  "garments": [
+   {
+    "yolo_class": "long sleeve top",
+    "yolo_conf": 0.941,
+    "box": [
+     55.2,
+     124.2,
+     333.0,
+     462.1
+    ],
+    "crop_box": [
+     41.3,
+     107.3,
+     346.9,
+     478.9
+    ],
+    "group": "Garment Upper body",
+    "group_source": "86%",
+    "group_top3": [
+     [
+      "Garment Upper body",
+      0.8623133301734924
+     ],
+     [
+      "Garment Full body",
+      0.07092694938182831
+     ],
+     [
+      "Swimwear",
+      0.01683569699525833
+     ]
+    ],
+    "colour": "Black",
+    "colour_conf": 0.598,
+    "colour_top3": [
+     [
+      "Black",
+      0.5981125235557556
+     ],
+     [
+      "Turquoise",
+      0.24134457111358643
+     ],
+     [
+      "Blue",
+      0.07278444617986679
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0639159002",
+      "score": 0.3857,
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0422106017",
+      "score": 0.3704,
+      "group": "Garment Upper body",
+      "colour": "Lilac Purple"
+     },
+     {
+      "id": "0549598001",
+      "score": 0.3613,
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0568069003",
+      "score": 0.3579,
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0621914001",
+      "score": 0.356,
+      "group": "Garment Upper body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0556015005",
+      "score": 0.3457,
+      "group": "Garment Upper body",
+      "colour": "Khaki green"
+     },
+     {
+      "id": "0422106001",
+      "score": 0.3429,
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0547482003",
+      "score": 0.3413,
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0566394003",
+      "score": 0.3383,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0601876003",
+      "score": 0.3379,
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     }
+    ],
+    "buy_next_seed": "0621914001",
+    "buy_next": [
+     {
+      "id": "0685811001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0685813001",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0685811002",
+      "group": "Garment Lower body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0685816002",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0759814009",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0759871002",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0608945001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0685816041",
+      "group": "Garment Upper body",
+      "colour": "Green"
+     },
+     {
+      "id": "0608945008",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0591466024",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0685816001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0856109001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "photo": "data/street_test/demo/green_dress.jpg",
+  "width": 468,
+  "height": 702,
+  "garments": [
+   {
+    "yolo_class": "short sleeve dress",
+    "yolo_conf": 0.944,
+    "box": [
+     107.6,
+     223.5,
+     407.9,
+     692.4
+    ],
+    "crop_box": [
+     92.6,
+     200.1,
+     422.9,
+     702
+    ],
+    "group": "Garment Full body",
+    "group_source": "86%",
+    "group_top3": [
+     [
+      "Garment Full body",
+      0.8596052527427673
+     ],
+     [
+      "Garment Upper body",
+      0.06565940380096436
+     ],
+     [
+      "Shoes",
+      0.02540883794426918
+     ]
+    ],
+    "colour": "Green",
+    "colour_conf": 0.756,
+    "colour_top3": [
+     [
+      "Green",
+      0.756270170211792
+     ],
+     [
+      "Yellow",
+      0.08412914723157883
+     ],
+     [
+      "Orange",
+      0.032485611736774445
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0633535001",
+      "score": 0.3823,
+      "group": "Garment Full body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0658641001",
+      "score": 0.3496,
+      "group": "Garment Full body",
+      "colour": "Green"
+     },
+     {
+      "id": "0872697003",
+      "score": 0.3446,
+      "group": "Garment Full body",
+      "colour": "Green"
+     },
+     {
+      "id": "0635303001",
+      "score": 0.339,
+      "group": "Garment Full body",
+      "colour": "Yellow"
+     },
+     {
+      "id": "0613529001",
+      "score": 0.3339,
+      "group": "Garment Full body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0634875002",
+      "score": 0.3324,
+      "group": "Garment Full body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0595124004",
+      "score": 0.328,
+      "group": "Garment Full body",
+      "colour": "Green"
+     },
+     {
+      "id": "0643301002",
+      "score": 0.3265,
+      "group": "Garment Full body",
+      "colour": "Yellow"
+     },
+     {
+      "id": "0700149002",
+      "score": 0.3249,
+      "group": "Garment Full body",
+      "colour": "Green"
+     },
+     {
+      "id": "0624445009",
+      "score": 0.3246,
+      "group": "Garment Full body",
+      "colour": "Orange"
+     }
+    ],
+    "buy_next_seed": null,
+    "buy_next": [
+     {
+      "id": "0924243001",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0924243002",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0918522001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0866731001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0909370001",
+      "group": "Garment Full body",
+      "colour": "White"
+     },
+     {
+      "id": "0751471001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0915529003",
+      "group": "Garment Upper body",
+      "colour": "Black"
+     },
+     {
+      "id": "0915529005",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0448509014",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0762846027",
+      "group": "Garment Upper body",
+      "colour": "Mole"
+     },
+     {
+      "id": "0714790020",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "photo": "data/street_test/demo/beige_hoodie.jpg",
+  "width": 490,
+  "height": 408,
+  "garments": [
+   {
+    "yolo_class": "long sleeve top",
+    "yolo_conf": 0.946,
+    "box": [
+     124.0,
+     78.5,
+     363.1,
+     382.4
+    ],
+    "crop_box": [
+     112.0,
+     63.3,
+     375.0,
+     397.6
+    ],
+    "group": "Garment Upper body",
+    "group_source": "97%",
+    "group_top3": [
+     [
+      "Garment Upper body",
+      0.9744508862495422
+     ],
+     [
+      "Garment Full body",
+      0.014232704415917397
+     ],
+     [
+      "Swimwear",
+      0.0033001750707626343
+     ]
+    ],
+    "colour": "Beige",
+    "colour_conf": 0.832,
+    "colour_top3": [
+     [
+      "Beige",
+      0.8316320180892944
+     ],
+     [
+      "Orange",
+      0.05085863545536995
+     ],
+     [
+      "Mole",
+      0.04159480705857277
+     ]
+    ],
+    "similar": [
+     {
+      "id": "0557248024",
+      "score": 0.4885,
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0576998002",
+      "score": 0.4608,
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0607118008",
+      "score": 0.4553,
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0636475010",
+      "score": 0.4457,
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0685814005",
+      "score": 0.443,
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0450780006",
+      "score": 0.432,
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0812984003",
+      "score": 0.4276,
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0583456007",
+      "score": 0.423,
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0679482001",
+      "score": 0.4172,
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0670334030",
+      "score": 0.4147,
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     }
+    ],
+    "buy_next_seed": "0636475010",
+    "buy_next": [
+     {
+      "id": "0810169016",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0810172003",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0679854005",
+      "group": "Garment Upper body",
+      "colour": "Khaki green"
+     },
+     {
+      "id": "0775382001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0189634001",
+      "group": "Garment Lower body",
+      "colour": "Black"
+     },
+     {
+      "id": "0300024058",
+      "group": "Garment Lower body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0534164001",
+      "group": "Garment Upper body",
+      "colour": "White"
+     },
+     {
+      "id": "0810169003",
+      "group": "Garment Lower body",
+      "colour": "Grey"
+     },
+     {
+      "id": "0316441038",
+      "group": "Garment Upper body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0534164029",
+      "group": "Garment Upper body",
+      "colour": "Beige"
+     },
+     {
+      "id": "0810169001",
+      "group": "Garment Lower body",
+      "colour": "Blue"
+     },
+     {
+      "id": "0707373003",
+      "group": "Garment Upper body",
+      "colour": "Yellow"
+     }
+    ]
+   }
+  ]
+ }
+]
